@@ -1,0 +1,42 @@
+{
+  "name": "Start test",
+
+  "description": "Start test chrome extention",
+
+  "version": "1.0",
+
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "contextMenus",
+    "<all_urls>",
+    "storage"
+  ],
+
+  "background": {
+    "scripts": ["jquery.min.js", "background.js"],
+    "persistent": false
+  },
+  
+  "web_accessible_resources": [
+    "basic.css",
+    "jquery.min.js",
+    "jquery.min.map",
+    "basic.js",
+    "black.png"
+  ],
+  
+  "content_scripts": [{
+   "matches": ["http://*/*","https://*/*"],
+   "css":["basic.css"],
+   "js":["jquery.min.js", "jquery.mousewheel.min.js","jquery-ui.min.js", "basic.js"]
+  }],
+
+  "browser_action": {
+    "default_title": "Layout Manager",
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  
+  "manifest_version": 2
+}

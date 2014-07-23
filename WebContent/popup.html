@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+<head>
+<title>Layout Manager</title>
+<style>
+body {
+	min-width: 300px;
+	overflow: hidden;
+	border-radius: 15px;
+	margin: 0;
+}
+
+.add_select_list {
+	width: 230px;
+}
+
+.add_css_attribute_button {
+	width: 50px;
+	height: 20px;
+	margin: 0px;
+	margin-left: 10px;
+	background-color: #3498db;
+	border: 0px;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+}
+
+.add_css_attribute_button:active {
+	width: 50px;
+	height: 20px;
+	margin: 0px;
+	margin-left: 10px;
+	background-color: #46b8da;
+	border: 0px;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+}
+
+.add_start_background_click_div {
+	overflow: hidden;
+	margin-bottom: 3px;
+	padding: 2px;
+}
+
+.add_new_style_div {
+	overflow: hidden;
+	margin-bottom: 3px;
+	padding: 2px;
+}
+
+#add_start_button {
+	float: right;
+	width: 50px;
+	height: 20px;
+	margin: 0px;
+	margin-left: 10px;
+	background-color: #3498db;
+	border: 0px;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+}
+
+#add_absolute_button{
+	float: right;
+	width: 65px;
+	height: 20px;
+	margin: 0px;
+	margin-left: 10px;
+	background-color: #3498db;
+	border: 0px;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+}
+
+.green_background{
+	color: #ffffff !important;
+	background-color: #2ecc71 !important;
+}
+
+.red_background{
+	color: #ffffff !important;
+	background-color: #e74c3c !important;
+}
+
+.gray_background{
+	color: #ffffff;
+	background-color: #bdc3c7 !important;
+}
+
+</style>
+</head>
+<body>
+	<div class="add_start_background_click_div">
+		<button id="add_start_button" class="red_background">Off</button>
+		<button id="add_absolute_button" class="gray_background">Initial</button>
+	</div>
+	<div id="add_old_style_div">
+	</div>
+	
+	<div class="add_new_style_div">
+		<select class="add_select_list">
+			<optgroup label="A">
+				<option value="accelerator">accelerator</option>
+				<option value="azimuth">azimuth</option>
+			</optgroup>
+			<optgroup label="B">
+				<option value="background">background</option>
+				<option value="background-attachment">background-attachment</option>
+				<option value="background-color">background-color</option>
+				<option value="background-image">background-image</option>
+				<option value="background-position">background-position</option>
+				<option value="background-position-x">background-position-x</option>
+				<option value="background-position-y">background-position-y</option>
+				<option value="background-repeat">background-repeat</option>
+				<option value="behavior">behavior</option>
+				<option value="border">border</option>
+				<option value="border-bottom">border-bottom</option>
+				<option value="border-bottom-color">border-bottom-color</option>
+				<option value="border-bottom-style">border-bottom-style</option>
+				<option value="border-bottom-width">border-bottom-width</option>
+				<option value="border-collapse">border-collapse</option>
+				<option value="border-color">border-color</option>
+				<option value="border-left">border-left</option>
+				<option value="border-left-color">border-left-color</option>
+				<option value="border-left-style">border-left-style</option>
+				<option value="border-left-width">border-left-width</option>
+				<option value="border-right">border-right</option>
+				<option value="border-right-color">border-right-color</option>
+				<option value="border-right-style">border-right-style</option>
+				<option value="border-right-width">border-right-width</option>
+				<option value="border-spacing">border-spacing</option>
+				<option value="border-style">border-style</option>
+				<option value="border-top">border-top</option>
+				<option value="border-top-color">border-top-color</option>
+				<option value="border-top-style">border-top-style</option>
+				<option value="border-top-width">border-top-width</option>
+				<option value="border-width">border-width</option>
+				<option value="bottom">bottom</option>
+			</optgroup>
+			<optgroup label="C">
+				<option value="caption-side">caption-side</option>
+				<option value="clear">clear</option>
+				<option value="clip">clip</option>
+				<option value="color">color</option>
+				<option value="content">content</option>
+				<option value="counter-increment">counter-increment</option>
+				<option value="counter-reset">counter-reset</option>
+				<option value="cue">cue</option>
+				<option value="cue-after">cue-after</option>
+				<option value="cue-before">cue-before</option>
+				<option value="cursor">cursor</option>
+			</optgroup>
+			<optgroup label="D">
+				<option value="direction">direction</option>
+				<option value="display">display</option>
+			</optgroup>
+			<optgroup label="E">
+				<option value="elevation">elevation</option>
+				<option value="empty-cells">empty-cells</option>
+			</optgroup>
+			<optgroup label="F">
+				<option value="filter">filter</option>
+				<option value="float">float</option>
+				<option value="font">font</option>
+				<option value="font-family">font-family</option>
+				<option value="font-size">font-size</option>
+				<option value="bottofont-size-adjustm">font-size-adjust</option>
+				<option value="font-stretch">font-stretch</option>
+				<option value="font-style">font-style</option>
+				<option value="font-variant">font-variant</option>
+				<option value="font-weight">font-weight</option>
+			</optgroup>
+			<optgroup label="G">
+
+			</optgroup>
+			<optgroup label="H">
+				<option value="height">height</option>
+
+			</optgroup>
+			<optgroup label="I">
+				<option value="ime-mode">ime-mode</option>
+				<option value="include-source">include-source</option>
+
+			</optgroup>
+			<optgroup label="J">
+
+
+			</optgroup>
+			<optgroup label="K">
+
+
+			</optgroup>
+			<optgroup label="L">
+
+				<option value="layer-background-color">layer-background-color</option>
+				<option value="layer-background-image">layer-background-image</option>
+				<option value="layout-flow">layout-flow</option>
+				<option value="layout-grid">layout-grid</option>
+				<option value="layout-grid-char">layout-grid-char</option>
+				<option value="layout-grid-char-spacing">layout-grid-char-spacing</option>
+				<option value="layout-grid-line">layout-grid-line</option>
+				<option value="layout-grid-mode">layout-grid-mode</option>
+				<option value="layout-grid-type">layout-grid-type</option>
+				<option value="left">left</option>
+				<option value="letter-spacing">letter-spacing</option>
+				<option value="line-break">line-break</option>
+				<option value="line-height">line-height</option>
+				<option value="list-style">list-style</option>
+				<option value="list-style-image">list-style-image</option>
+				<option value="list-style-position">list-style-position</option>
+				<option value="list-style-type">list-style-type</option>
+			</optgroup>
+			<optgroup label="M">
+
+				<option value="margin">margin</option>
+				<option value="margin-bottom">margin-bottom</option>
+				<option value="margin-left">margin-left</option>
+				<option value="margin-right">margin-right</option>
+				<option value="margin-top">margin-top</option>
+				<option value="marker-offset">marker-offset</option>
+				<option value="marks">marks</option>
+				<option value="max-height">max-height</option>
+				<option value="max-width">max-width</option>
+				<option value="min-height">min-height</option>
+				<option value="min-width">min-width</option>
+				<option value="-moz-binding">-moz-binding</option>
+				<option value="-moz-border-radius">-moz-border-radius</option>
+				<option value="-moz-border-radius-topleft">-moz-border-radius-topleft</option>
+				<option value="-moz-border-radius-topright">-moz-border-radius-topright</option>
+				<option value="-moz-border-radius-bottomright">-moz-border-radius-bottomright</option>
+				<option value="-moz-border-radius-bottomleft">-moz-border-radius-bottomleft</option>
+				<option value="-moz-border-top-colors">-moz-border-top-colors</option>
+				<option value="bott-moz-border-right-colorsom">-moz-border-right-colors</option>
+				<option value="-moz-border-bottom-colors">-moz-border-bottom-colors</option>
+				<option value="-moz-border-left-colors">-moz-border-left-colors</option>
+				<option value="-moz-opacity">-moz-opacity</option>
+				<option value="-moz-outline">-moz-outline</option>
+				<option value="-moz-outline-color">-moz-outline-color</option>
+				<option value="-moz-outline-style">-moz-outline-style</option>
+				<option value="-moz-outline-width">-moz-outline-width</option>
+				<option value="-moz-user-focus">-moz-user-focus</option>
+				<option value="-moz-user-input">-moz-user-input</option>
+				<option value="-moz-user-modify">-moz-user-modify</option>
+				<option value="-moz-user-select">-moz-user-select</option>
+			</optgroup>
+			<optgroup label="N">
+
+
+			</optgroup>
+			<optgroup label="O">
+				<option value="orphans">orphans</option>
+				<option value="outline">outline</option>
+				<option value="outline-color">outline-color</option>
+				<option value="outline-style">outline-style</option>
+				<option value="outline-width">outline-width</option>
+				<option value="overflow">overflow</option>
+				<option value="overflow-X">overflow-X</option>
+				<option value="overflow-Y">overflow-Y</option>
+
+			</optgroup>
+			<optgroup label="P">
+
+				<option value="padding">padding</option>
+				<option value="padding-bottom">padding-bottom</option>
+				<option value="padding-left">padding-left</option>
+				<option value="padding-right">padding-right</option>
+				<option value="padding-top">padding-top</option>
+				<option value="page">page</option>
+				<option value="page-break-after">page-break-after</option>
+				<option value="page-break-before">page-break-before</option>
+				<option value="page-break-inside">page-break-inside</option>
+				<option value="pause">pause</option>
+				<option value="pause-after">pause-after</option>
+				<option value="pause-before">pause-before</option>
+				<option value="pitch">pitch</option>
+				<option value="pitch-range">pitch-range</option>
+				<option value="play-during">play-during</option>
+				<option value="position">position</option>
+			</optgroup>
+			<optgroup label="Q">
+				<option value="quotes">quotes</option>
+
+			</optgroup>
+			<optgroup label="R">
+				<option value="-replace">-replace</option>
+				<option value="richness">richness</option>
+				<option value="right">right</option>
+				<option value="ruby-align">ruby-align</option>
+				<option value="ruby-overhang">ruby-overhang</option>
+				<option value="ruby-position">ruby-position</option>
+
+			</optgroup>
+			<optgroup label="S">
+				<option value="-set-link-source">-set-link-source</option>
+				<option value="size">size</option>
+				<option value="speak">speak</option>
+				<option value="speak-header">speak-header</option>
+				<option value="speak-numeral">speak-numeral</option>
+				<option value="speak-punctuation">speak-punctuation</option>
+				<option value="speech-rate">speech-rate</option>
+				<option value="stress">stress</option>
+				<option value="scrollbar-arrow-color">scrollbar-arrow-color</option>
+				<option value="scrollbar-base-color">scrollbar-base-color</option>
+				<option value="scrollbar-dark-shadow-color">scrollbar-dark-shadow-color</option>
+				<option value="scrollbar-face-color">scrollbar-face-color</option>
+				<option value="scrollbar-highlight-color">scrollbar-highlight-color</option>
+				<option value="scrollbar-shadow-color">scrollbar-shadow-color</option>
+				<option value="scrollbar-3d-light-color">scrollbar-3d-light-color</option>
+				<option value="scrollbar-track-color">scrollbar-track-color</option>
+
+			</optgroup>
+			<optgroup label="T">
+				<option value="table-layout">table-layout</option>
+				<option value="text-align">text-align</option>
+				<option value="text-align-last">text-align-last</option>
+				<option value="text-decoration">text-decoration</option>
+				<option value="text-indent">text-indent</option>
+				<option value="text-justify">text-justify</option>
+				<option value="text-overflow">text-overflow</option>
+				<option value="text-shadow">text-shadow</option>
+				<option value="text-transform">text-transform</option>
+				<option value="text-autospace">text-autospace</option>
+				<option value="text-kashida-space">text-kashida-space</option>
+				<option value="text-underline-position">text-underline-position</option>
+				<option value="top">top</option>
+
+			</optgroup>
+			<optgroup label="U">
+
+				<option value="unicode-bidi">unicode-bidi</option>
+				<option value="-use-link-source">-use-link-source</option>
+			</optgroup>
+			<optgroup label="V">
+
+				<option value="vertical-align">vertical-align</option>
+				<option value="visibility">visibility</option>
+				<option value="voice-family">voice-family</option>
+				<option value="volume">volume</option>
+			</optgroup>
+			<optgroup label="W">
+
+				<option value="white-space">white-space</option>
+				<option value="widows">widows</option>
+				<option value="width">width</option>
+				<option value="word-break">word-break</option>
+				<option value="word-spacing">word-spacing</option>
+				<option value="word-wrap">word-wrap</option>
+				<option value="writing-mode">writing-mode</option>
+			</optgroup>
+			<optgroup label="X">
+
+
+			</optgroup>
+			<optgroup label="Y">
+
+
+			</optgroup>
+			<optgroup label="Z">
+				<option value="z-index">z-index</option>
+				<option value="zoom">zoom</option>
+
+			</optgroup>
+		</select>
+		<button class="add_css_attribute_button">+</button>
+	</div>
+</body>
+<script src="jquery.min.js"></script>
+<script src="popup.js"></script>
+</html>
+
